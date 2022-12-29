@@ -10,7 +10,7 @@ public abstract class Body {
 
     private Vec2 vel;
 
-    private Vec2 sumOfForces = new Vec2(0, 0);
+    public Vec2 sumOfForces = new Vec2(0, 0);
 
     private Vec2 sumOfAngularForces = new Vec2(0, 0);
 
@@ -78,6 +78,4 @@ public abstract class Body {
     public void updateAngOverTime(double deltaT) {
         this.ang += this.angVel * deltaT;
     }
-
-    public abstract void update(double deltaT);
 }

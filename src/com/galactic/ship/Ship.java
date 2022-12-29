@@ -9,20 +9,9 @@ public class Ship extends Body {
     public Ship(Vec2 pos, Vec2 vel, double ang, double angVel, double mass) {
         super(pos, vel, ang, angVel, mass);
     }
+
     // non-static methods
-
-    public void update(double deltaT) {
-        updatePosOverTime(deltaT);
-        updateAngOverTime(deltaT);
-        updateForces();
-        updateVelocities(deltaT);
-    }
-
-    public void updateForces() {
-        updateGravity();
-    }
-
-    public void updateVelocities(double deltaT) {
+    public void updateThrusts() {
 
     }
     // static methods
