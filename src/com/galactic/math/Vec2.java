@@ -50,7 +50,13 @@ public class Vec2 {
     public BigDecimal dot(Vec2 other) {
         return x.multiply(other.x).add(y.multiply(other.y));
     }
+    public double dotDub(Vec2 other) {
+    	return dot(other).doubleValue();
+    }
 
+    public double magnitudeSquaredDub() {
+    	return xDub() * xDub() + yDub() * yDub();
+    } 
     public BigDecimal magnitudeSquared() {
         return x.multiply(x).add(y.multiply(y));
     }
