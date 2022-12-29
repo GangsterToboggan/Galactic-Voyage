@@ -68,6 +68,10 @@ public abstract class Body {
     }
 
     public void updatePosOverTime(double deltaT) {
-        return this.pos.add(this.vel.)
+        this.pos = this.pos.add(this.vel.scale(deltaT));
+    }
+
+    public void updateAngOverTime(double deltaT) {
+        this.ang += this.angVel * deltaT;
     }
 }
