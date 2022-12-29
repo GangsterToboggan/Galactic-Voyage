@@ -1,22 +1,65 @@
-public interface Body {
+public abstract class Body {
 
-    public Vec2 getPos();
+    // fields
 
-    public void setPos(Vec2 position);
+    private Vec2 pos;
 
-    public Vec2 getVel();
+    private Vec2 vel;
 
-    public void setVel(Vec2 velocity);
+    private double ang;
 
-    public double getAng();
+    private double angVel;
 
-    public void setAng(double angle);
+    private double mass;
 
-    public double getAngVel();
+    // constructor
+    public Body(Vec2 pos, Vec2 vel, double ang, double angVel, double mass) {
+        this.pos = pos;
+        this.vel = vel;
+        this.ang = ang;
+        this.angVel = angVel;
+        this.mass = mass;
+    }
 
-    public void setAngVel(double angularVelocity);
+    // methods
 
-    public double getMass();
+    public Vec2 getPos() {
+        return this.pos;
+    }
 
-    public void setMass(double mass);
+    public void setPos(Vec2 position) {
+        this.pos = position;
+    }
+
+    public Vec2 getVel() {
+        return this.vel;
+    }
+
+    public void setVel(Vec2 velocity) {
+        this.vel = velocity;
+    }
+
+    public double getAng() {
+        return this.ang;
+    }
+
+    public void setAng(double angle) {
+        this.ang = angle;
+    }
+
+    public double getAngVel() {
+        return this.angVel;
+    }
+
+    public void setAngVel(double angularVelocity) {
+        this.angVel = angularVelocity;
+    }
+
+    public double getMass() {
+        return this.mass;
+    }
+
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
 }
