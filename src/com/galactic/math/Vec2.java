@@ -56,7 +56,12 @@ public class Vec2 {
     }
 
     public BigDecimal magnitude() {
-        return this.magnitudeSquared().sqrt(MATHCONTEXT);
+        //`return this.magnitudeSquared().sqrt(MATHCONTEXT);
+    	return new BigDecimal(Math.sqrt(this.magnitudeSquared().doubleValue()),MATHCONTEXT);
+    }
+    public double magnitudeDub() {
+        //`return this.magnitudeSquared().sqrt(MATHCONTEXT);
+    	return Math.sqrt(this.magnitudeSquared().doubleValue());
     }
 
     @Override
@@ -73,11 +78,11 @@ public class Vec2 {
     }
 
     // static methods
-    public Vec2 Unit() {
+    public static Vec2 Unit() {
         return new Vec2(1, 1);
     }
 
-    public Vec2 Zero() {
+    public static Vec2 Zero() {
         return new Vec2(0, 0);
     }
 
