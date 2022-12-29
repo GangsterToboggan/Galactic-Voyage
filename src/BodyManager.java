@@ -28,18 +28,5 @@ public class BodyManager {
         return (Planet[]) planets.toArray();
     }
 
-    public void Update(double deltaT) {
-        updatePositions(deltaT);
-        updateForces();
-        updateVelocities();
-    }
-
-    public void updatePositions(double deltaT) {
-        for (Body body : bodies) {
-            body.updatePosOverTime();
-            body.updateAngOverTime();
-        }
-    }
-
     // static methods
 }
