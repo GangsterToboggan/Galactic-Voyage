@@ -1,3 +1,7 @@
+package com.galactic.base;
+
+import com.galactic.math.Vec2;
+
 public abstract class Body {
 
     // fields

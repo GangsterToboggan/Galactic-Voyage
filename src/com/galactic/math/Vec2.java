@@ -1,3 +1,4 @@
+package com.galactic.math;
 import java.math.BigDecimal;
 import java.math.MathContext;
 
