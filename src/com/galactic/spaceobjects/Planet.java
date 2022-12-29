@@ -1,3 +1,7 @@
+package com.galactic.spaceobjects;
+import com.galactic.base.Body;
+import com.galactic.math.Vec2;
+
 public class Planet extends Body {
     // fields
 

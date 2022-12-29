@@ -1,4 +1,7 @@
+package com.galactic.base;
 import java.util.ArrayList;
+
+import com.galactic.spaceobjects.Planet;
 
 public class BodyManager {
     // fields
