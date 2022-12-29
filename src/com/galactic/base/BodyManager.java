@@ -1,4 +1,5 @@
 package com.galactic.base;
+
 import java.util.ArrayList;
 
 import com.galactic.spaceobjects.Planet;
@@ -8,7 +9,7 @@ public class BodyManager {
     private Body[] bodies;
     // constructors
 
-    public BodyManager(Body[] bodies) {
+    public BodyManager(Body... bodies) {
         this.bodies = bodies;
     }
 

@@ -78,4 +78,6 @@ public abstract class Body {
     public void updateAngOverTime(double deltaT) {
         this.ang += this.angVel * deltaT;
     }
+
+    public abstract void update(double deltaT);
 }
