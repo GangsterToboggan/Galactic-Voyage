@@ -29,7 +29,7 @@ public class App {
 
     Ship ship = new Ship(null, null, 0, 0, 0);
 
-    BodyManager bodyManager = new BodyManager(earth, moon, ship);
+    Simulation sim = new Simulation(earth, moon, ship);
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Kyle!");
