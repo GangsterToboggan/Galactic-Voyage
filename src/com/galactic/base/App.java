@@ -2,6 +2,7 @@ package com.galactic.base;
 
 import java.math.BigDecimal;
 
+import com.galactic.graphics.MainWindow;
 import com.galactic.math.Vec2;
 import com.galactic.ship.Ship;
 import com.galactic.spaceobjects.Planet;
@@ -33,5 +34,6 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Kyle!");
+        MainWindow.start();
     }
 }
