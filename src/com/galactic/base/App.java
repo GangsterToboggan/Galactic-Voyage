@@ -2,6 +2,7 @@ package com.galactic.base;
 
 import java.math.BigDecimal;
 
+import com.galactic.graphics.MainWindow;
 import com.galactic.math.Vec2;
 import com.galactic.ship.Ship;
 import com.galactic.spaceobjects.Planet;
@@ -35,6 +36,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Kyle!");
+<<<<<<< HEAD
         BigDecimal planetMass = new BigDecimal(Math.pow(10, 6));
         Planet testPlanet = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 0, planetMass.doubleValue());
         Ship testShip = new Ship(new Vec2(0, 1000),
@@ -49,5 +51,8 @@ public class App {
                     + (magnitude - testShip.getVel().magnitude().doubleValue()) + " t = " + i + "/" + t);
         }
         System.out.println(testShip.getPos().x + " ," + testShip.getPos().y);
+=======
+        MainWindow.start();
+>>>>>>> e568cfce422acfa82fbe1ec0e35fbf3101862945
     }
 }
