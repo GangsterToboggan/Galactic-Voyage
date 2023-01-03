@@ -2,8 +2,8 @@ package com.galactic.graphics;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseWheelEvent;
-import java.math.BigDecimal;
 
+import com.galactic.math.AABB;
 import com.galactic.math.Vec2;
 import com.galactic.ship.Ship;
 
@@ -31,6 +31,9 @@ public class ViewportController extends MouseAdapter{
 	public Vec2 getViewportBounds() {
 		Vec2 viewportBounds = new Vec2(width, width*aspectRatio);
 		return viewportBounds;	
+	}
+	public AABB getViewportAABB() {
+		return new AABB(getViewportOffset(), getViewportBounds());
 	}
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
