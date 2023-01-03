@@ -1,5 +1,6 @@
 package com.galactic.base;
 
+import java.awt.Graphics2D;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -96,6 +97,13 @@ public class Simulation {
     public void updateVelocities(double deltaT) {
         for (Body body : bodies) {
             body.setVel(body.sumOfForces.scale(1 / body.getMass()).scale(deltaT).add(body.getVel()));
+        }
+    }
+    
+    public void paint(Graphics2D g, Vec2 screenDimensions, Vec2 viewportDims, Vec2 viewportOffset) {
+    	
+    	for (Body body : bodies) {
+     //       body.paint(g, width, height);
         }
     }
 

@@ -1,5 +1,7 @@
 package com.galactic.base;
 
+import java.awt.Graphics2D;
+
 import com.galactic.math.Vec2;
 
 public abstract class Body {
@@ -19,6 +21,7 @@ public abstract class Body {
     private double angVel;
 
     private double mass;
+    
 
     // constructor
     public Body(Vec2 pos, Vec2 vel, double ang, double angVel, double mass) {
@@ -78,4 +81,6 @@ public abstract class Body {
     public void updateAngOverTime(double deltaT) {
         this.ang += this.angVel * deltaT;
     }
+    public Vec2[]
+    //public abstract void paint(Graphics2D g);
 }
