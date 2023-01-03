@@ -29,9 +29,25 @@ public class App {
 
     Ship ship = new Ship(null, null, 0, 0, 0);
 
+    public static final BigDecimal G = new BigDecimal(6.6743 * Math.pow(10, -11));
+
     Simulation sim = new Simulation(earth, moon, ship);
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Kyle!");
+        BigDecimal planetMass = new BigDecimal(Math.pow(10, 6));
+        Planet testPlanet = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 0, planetMass.doubleValue());
+        Ship testShip = new Ship(new Vec2(0, 1000),
+                new Vec2(Math.sqrt(App.G.multiply(planetMass).divide(new BigDecimal(1000)).doubleValue()), 0), 0, 0, 1);
+        double magnitude = Math.sqrt(App.G.multiply(planetMass).divide(new BigDecimal(1000)).doubleValue());
+        double t = 2 * Math.PI * 1000 / (magnitude * 2);
+        double deltaT = t / 1000;
+        Simulation sim = new Simulation(testPlanet, testShip);
+        for (double i = 0; i < t; i += deltaT) {
+            sim.update(deltaT);
+            System.out.println("Expected:" + magnitude + " actual:" + testShip.getVel().magnitude() + " dif"
+                    + (magnitude - testShip.getVel().magnitude().doubleValue()) + " t = " + i + "/" + t);
+        }
+        System.out.println(testShip.getPos().x + " ," + testShip.getPos().y);
     }
 }

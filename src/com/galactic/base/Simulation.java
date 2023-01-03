@@ -74,13 +74,17 @@ public class Simulation {
     public void updateGravity() {
         for (Body otherBody : bodies) {
             for (Body body : bodies) {
-                Vec2 r = otherBody.getPos().sub(body.getPos());
-                BigDecimal sinR = r.y.divide(r.magnitude());
-                BigDecimal cosR = r.x.divide(r.magnitude());
-                BigDecimal magnitude = (G.multiply(new BigDecimal(body.getMass() * otherBody.getMass())))
-                        .divide(r.magnitudeSquared());
-                Vec2 forceOfGravity = new Vec2(magnitude.multiply(cosR), magnitude.multiply(sinR));
-                body.sumOfForces.add(forceOfGravity);
+                if (!body.equals(otherBody)) {
+                    Vec2 r = otherBody.getPos().sub(body.getPos());
+                    double sinR = r.y.doubleValue() / r.magnitude().doubleValue();
+                    double cosR = r.x.doubleValue() / (r.magnitude().doubleValue());
+                    double magnitude = (G.doubleValue() * (body.getMass() * otherBody.getMass()))
+                            / (r.magnitudeSquared().doubleValue());
+                    Vec2 forceOfGravity = new Vec2(magnitude * (cosR),
+                            magnitude * (sinR));
+                    // Vec2 forceOfGravity = Vec2.Unit();
+                    body.sumOfForces.add(forceOfGravity);
+                }
             }
         }
     }
