@@ -3,6 +3,7 @@ package com.galactic.base;
 import java.math.BigDecimal;
 
 import com.galactic.graphics.MainWindow;
+import com.galactic.math.Shapes;
 import com.galactic.math.Vec2;
 import com.galactic.ship.Ship;
 import com.galactic.spaceobjects.Planet;
@@ -22,11 +23,11 @@ public class App {
      * Temperature: Kelvin
      */
 
-    Planet earth = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 2 * Math.PI / 86400, 5.972 * Math.pow(10, 24));
+    Planet earth = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 2 * Math.PI / 86400, 5.972 * Math.pow(10, 24), new BoundingPolygon(Shapes.circle(10,10.0)));
 
     Planet moon = new Planet(new Vec2(0.3633 * Math.pow(10, 9), 0.),
             new Vec2(0.,1082.), 0, 2 * Math.PI / (27.3217 * 86400),
-            0.07346 * Math.pow(10, 24));
+            0.07346 * Math.pow(10, 24), new BoundingPolygon(Shapes.circle(10, 10.0)));
 
     Ship ship = new Ship(new Vec2(0.2*Math.pow(10,9),0.), new Vec2(0,0), 0, 0, 0);
 
@@ -37,7 +38,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Kyle!");
         BigDecimal planetMass = new BigDecimal(Math.pow(10, 6));
-        Planet testPlanet = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 0, planetMass.doubleValue());
+        Planet testPlanet = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 0, planetMass.doubleValue(), new BoundingPolygon(Shapes.circle(100, 200.0)));
         Ship testShip = new Ship(new Vec2(0, 1000),
                 new Vec2(Math.sqrt(App.G.multiply(planetMass).divide(new BigDecimal(1000)).doubleValue()), 0), 0, 0, 1);
         double magnitude = Math.sqrt(App.G.multiply(planetMass).divide(new BigDecimal(1000)).doubleValue());
@@ -50,6 +51,6 @@ public class App {
                     + (magnitude - testShip.getVel().magnitude().doubleValue()) + " t = " + i + "/" + t);
         }
         System.out.println(testShip.getPos().x + " ," + testShip.getPos().y);
-        MainWindow.start(sim);
+        MainWindow.start(sim, testShip);
     }
 }

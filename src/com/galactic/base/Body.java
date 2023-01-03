@@ -22,14 +22,17 @@ public abstract class Body {
 
     private double mass;
     
+    private BoundingPolygon bounds;
+    
 
     // constructor
-    public Body(Vec2 pos, Vec2 vel, double ang, double angVel, double mass) {
+    public Body(Vec2 pos, Vec2 vel, double ang, double angVel, double mass, BoundingPolygon bounds) {
         this.pos = pos;
         this.vel = vel;
         this.ang = ang;
         this.angVel = angVel;
         this.mass = mass;
+        this.bounds=bounds;
     }
 
     // methods
@@ -81,6 +84,8 @@ public abstract class Body {
     public void updateAngOverTime(double deltaT) {
         this.ang += this.angVel * deltaT;
     }
-    public Vec2[]
+    public BoundingPolygon getBounds() {
+    	return this.bounds;
+    }
     //public abstract void paint(Graphics2D g);
 }

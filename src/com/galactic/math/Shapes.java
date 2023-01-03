@@ -11,6 +11,9 @@ public class Shapes {
 		}
 		return points;
 	}
+	public static Vec2[] circle(int num_points, double radius) {
+		return Shapes.circle(num_points, new BigDecimal(radius));
+	}
 	
 	public static Vec2[] square(BigDecimal side_length) {
 		Vec2[] points = new Vec2[4];

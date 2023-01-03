@@ -1,20 +1,22 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.math.BigDecimal;
 
 import org.junit.Test;
 
 import com.galactic.base.App;
+import com.galactic.base.BoundingPolygon;
 import com.galactic.base.Simulation;
+import com.galactic.math.Shapes;
 import com.galactic.math.Vec2;
 import com.galactic.ship.Ship;
 import com.galactic.spaceobjects.Planet;
 
 public class OrbitalForcesTest {
     BigDecimal planetMass = new BigDecimal(Math.pow(10, 6));
-    Planet testPlanet = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0, 0, planetMass.doubleValue());
+    Planet testPlanet = new Planet(new Vec2(0, 0), new Vec2(0, 0), 0., 0., planetMass.doubleValue(), new BoundingPolygon(Shapes.circle(10, 10.)));
     Ship testShip = new Ship(new Vec2(0, 1000),
             new Vec2(Math.sqrt(App.G.multiply(planetMass).divide(new BigDecimal(1000)).doubleValue()), 0), 0, 0, 1);
 
